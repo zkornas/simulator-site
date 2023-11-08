@@ -1,18 +1,16 @@
 <html>
     <head>
-        <title>Zacharia Kornas</title>
+        <title>SimulaTor</title>
         <script src="javascript.js"></script>
         <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/x-icon" href="img/zach-cartoon.png">
+        <link rel="icon" type="image/x-icon" href="img/onion.png">
     </head>
     <body>
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
-            <a href="#" onclick="closeSidebar(); showContent('aboutme');">About</a>
-            <a href="#" onclick="closeSidebar(); showContent('myresearch')">Research</a>
-            <a href="#" onclick="closeSidebar(); showContent('myprojects')">Projects</a>
-            <a href="docs/Zacharia Kornas CV.pdf"
-            target="_blank"onclick="closeSidebar();">CV</a>
+            <a href="#" onclick="closeSidebar(); showContent('about');">About</a>
+            <a href="#" onclick="closeSidebar(); showContent('download');">Download</a>
+            <a href="#" onclick="closeSidebar(); showContent('howto');">How To</a>
             <label class="switch">
                 <input type="checkbox" onclick="isDarkMode();">
                 <span class="slider round"></span>
@@ -26,10 +24,9 @@
                 </div>
                 <div class="flex-child-header">
                     <div id="heading" class="heading">
-                        <h1 class="heading">Zacharia Kornas</h1>
+                        <h1 class="heading">SimulaTor</h1>
                         <p class="heading">
-                            Informatics, University of Washington <br>
-                            Information Assurance and Cybersecurity
+                            Rapid configuration and deployment of a Tor network across physical devices
                         </p>
                     </div>
                 </div>
@@ -37,40 +34,20 @@
         </div>
         </div>
         <div id="blur" class="blur">
-            <div id="aboutme" class="aboutme">
-                <div class="flex-container">
-                    <div class="flex-child">
-                        <h1>About Me</h1>
-                        <p class="aboutmeparagraph">
-                            Hello! My name is Zacharia Kornas and I am an Informatics student at the University of Washington. I am interested in all things related to computer security and security research. I am currently researching bandwidth inflation attacks within the Tor network, and hope to explore how these attacks can be used to deanonymize Tor users. 
-                        </p>
-                    </div>
-                    <div class="flex-child">
-                        <img class="zach" src="img/zach.png" alt="Zacharia Kornas">
-                        <p class="caption">
-                            Zacharia Kornas
-                        </p>
-                        <p style="font-size: 16px;">
-                            Email: <a target="_blank" href="mailto:zkornas@uw.edu">zkornas@uw.edu</a> <br>
-                            Github: <a target="_blank" href="https://github.com/zkornas">github.com/zkornas</a> <br>
-                            LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/zkornas/">linkedin.com/in/zkornas/</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div id="myresearch" class="pagecontent">
-                <h1>My Research</h1>
+            <div id="about" class="aboutme">
                 <div class="flex-container-posts">
                     <div class="flex-child-posts">
                         <div class="flex-container-single-post">
                             <div class="flex-child-single-post">
-                                <h2>Bandwidth Inflation Attacks in Tor</h2>
+                                <h2>About</h2>
                                 <p>
-                                    I am currently working on a research project exploring bandwidth inflation attacks within Tor. Specifically, we are researching how Tor’s bandwidth scanner (sbws) is used to verify bandwidth measurements of relays within the Tor network, and how an adversary can manipulate these readings to gain an unfair advantage in circuit construction. To do this, we have constructed a simulated Tor network using Raspberry Pis acting as various nodes. We hope to survey the current literature around bandwidth inflation attacks, understand how sbws currently attempts to mitigate bandwidth inflation attacks, and propose a solution to this issue that can work alongside or replace Tor’s current bandwidth scanner.
+                                    Welcome to SimulaTor, a tool for the rapid deployment of testing Tor networks accross physical hardware. Until now, researchers relied on virtualization tools that required significant computational power to research Tor. With SimulaTor, researchers can quickly and easily utilize cheap computers for research on the Tor network. <br>
+                                    <br>
+                                    While tools such as Chutney and Shadow allow researchers to create virtual Tor networks, there is no resource to help researchers create a simulated Tor network using physical nodes. While researching bandwidth inflation attacks, we have compiled information on creating a physical private Tor network and are excited to release the SimulaTor framework. Replicability is extremely important in research, and we hope that the SimulaTor framework will allow other researchers to be able to easily create simulated Tor networks to verify others' findings.
                                 </p>
                             </div>
                             <div class="flex-child-single-post">
-                                <img class="post-img" src="img/bandwidth-inflation.png" alt="Bandiwdth Inflation Attack cartoon">
+                                <img class="post-img" src="img/onion.png" alt="Tor onion icon">
                             </div>
                         </div>
                         <div class="flex-container-single-post">
@@ -78,110 +55,32 @@
                                 <img class="post-img" src="img/simulator.png" alt="SimulaTor cartoon">
                             </div>
                             <div class="flex-child-single-post-reversed">
-                                <h2>SimulaTor</h2>
+                                <h2>Why SimulaTor</h2>
                                 <p>
-                                    While tools such as Chutney and Shadow allow researchers to create virtual Tor networks, there is no resource to help researchers create a simulated Tor network using physical nodes. While researching bandwidth inflation attacks, I have been compiling information on creating a physical private Tor network and plan to release the SimulaTor framework soon. Replicability is extremely important in research, and I hope that the SimulaTor framework will allow other researchers to be able to easily create simulated Tor networks to verify others' findings.
+                                    In order to fully mitigate the various threats that face Tor users, we must conduct research to understand how an adversary can attack Tor. While the best environment for understanding these threat actors may be the live Tor network, it can be extremely risky to run these experiments as they can potentially deanonymize Tor users. As a result, there is a strong need to simulate Tor networks for researchers to conduct their experiments. <br>
+                                    <br>
+                                    Currently, there is no clear documentation or tools for researchers to construct testing Tor networks on physical hardware, and researchers must rely on virtualization tools such as Shadow and Chutney. While these are amazing tools, there can be situations where it is preferred or necessary to conduct experiments over a physical network rather than a virtual environment. 
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="myprojects" class="pagecontent">
-                <h1>My Projects</h1>
+            <div id="download" class="pagecontent">
                 <div class="flex-container-posts">
                     <div class="flex-child-posts">
                         <div class="flex-container-single-post">
                             <div class="flex-child-single-post">
-                                <h2>Oops! I Hacked My Professor >:)</h2>
+                                <h2>Github</h2>
                                 <p>
-                                    The professor for our cybersecurity course challenged all students to try to hack him. Using a combination of social engineering and technical aptitude, I was the only student in the course to successfully plan and execute an attack against my professor.<br>
+                                    The SimulaTor framework is currently available on Github! <br>
                                     <br>
-                                    Through my reconnaissance, I was able to determine the best avenue to carry out my attack. I decided to conduct a phishing attack by sending my target a link to a malicious web page I was hosting. The webpage redirected to a clone of my university's SSO page, and I could potentially save the login information entered by my target to perform future attacks. The professor did try to login with their school login, thus making my phishing attack a success.<br>
-                                    <br>
-                                    This project taught me the importance of social engineering as well as technical competence needed for an adversary to carry out a successful attack.
+                                    <a href="https://github.com/zkornas/SimulaTor">Click here to check out the Github repository</a>
                                 </p>
                             </div>
                             <div class="flex-child-single-post">
-                                <img class="post-img" src="img/hacked-professor.png" alt="hacked my professor cartoon">
+                                <img class="post-img" src="img/Github-icon.png" alt="Github icon">
                             </div>
-                        </div>
-                        <div class="flex-container-single-post">
-                            <div class="flex-child-single-post-reversed">
-                                <img class="post-img" src="img/tic-tac-toe-game.png" alt="tic-tac-toe game cartoon">
-                            </div>
-                            <div class="flex-child-single-post-reversed">
-                                <h2>Tic-Tac-Toe</h2>
-                                <p>
-                                    In this project, I worked with a team to develop a Java-based multiplayer Tic-Tac-Toe game following the provided <a target="_blank" href="https://github.com/zkornas/TicTacToeRFC/blob/main/RFC.md">Tic-Tac-Toe RFC</a>. Utilizing a server-client architecture, players were able to connect seamlessly from multiple platforms to host and play games while ensuring universal compatibility. We were able to implement many user-friendly features, such as game session management, real-time move updates, and game result notifications. Check out our Tic-Tac-Toe game <a target="_blank" href="https://github.com/zkornas/TicTacToeRFC">here</a>!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex-container-single-post">
-                            <div class="flex-child-single-post">
-                                <h2 style="padding-top: 100px">DubDumps</h2>
-                                <p>
-                                    DubDumps was a website designed to help students at the University of Washington locate the nearest restroom. We integrated useful features for students such as bathroom rating systems, structured searches, and ability to login with student email. Students are able to use DubDumps to locate bathrooms that meet their requirements, such as accessibility, proximity, and amenities offered in each restroom. <br>
-                                    <p style="font-style: italic;">“The goal of DubDumps is to support our current community’s public health, promote personal hygiene, and ultimately make our campus a more accessible place.”<br></p>
-                                    <p>You can see more about DubDumps <a target="_blank" href="https://github.com/info340b-sp22/Dub-Dumps">here</a>! </p>
-                                </p>
-                            </div>
-                            <div class="flex-child-single-post">
-                                <img class="post-img" style="max-height: 120%"src="img/dub-dumps.png" alt="Dub Dumps logo">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-container-single-post">
-                        <div class="flex-child-single-post-courses">
-                            <h1>Course Projects</h1>
-                            <p>
-                                Listed below are some of the various projects I completed during my academic course work. Each project was an exciting challenge and allowed me the opportunity to demonstrate the technical ability I gained during my studies. Click on any of the projects below to view their github repositories!
-                            </p>
-                            <h2>CSE 142: Foundations of Programming I:</h2>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE142-Spring2021-Assessment1-Song">- Song</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE142-Spring2021-Assessment2-SpaceNeedle">- Space Needle</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE142-Spring2021-Assessment3-CafeWall">- Cafe Wall</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE142-Spring2021-Assessment4-Budgeter">- Budgeter</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE142-Spring2021-Assessment5-GuessingGame">- Guessing Game</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE142-Spring2021-Assessment6-YazInterpreter">- Yaz Interpreter</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE142-Spring2021-Assessment7-Personality">- Personality Test</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE142-Spring2021-Assessment8-Critters">- Critters</a><br>
-                            <h2>CSE 143: Foundations of Programming II:</h2>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE143-Fall2021-Assessment1-LetterInventory">- Letter Inventory</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE143-Fall2021-Assessment2-GuitarHero">- Guitar Hero</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE143-Fall2021-Assessment3-AssassinManager">- Assassin Manager</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE143-Fall2021-Assessment4-EvilHangman">- Evil Hangman</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE143-Fall2021-Assessment5-Grammar">- Grammar</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE143-Fall2021-Assessment6-AnagramSolver">- Anagram Solver</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE143-Fall2021-Assessment7-20Questions">- 20 Questions</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE143-Fall2021-Assessment8-Huffman">- Huffman Coding</a><br>
-                            <h2>INFO 314: Computer Networks and Distributed Applications:</h2>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/tcptools">- TCP Tools</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/socketclient/tree/main">- Socket Client</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/socketserver">- Socket Server (QOTD)</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/httpserver">- HTTP Server</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO314-RMIByHand/tree/main">- RMI By Hand</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/XMLRPC">- XML RPC</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO314-NATS">- Stock Market System</a><br>
-                            <h2>CSE 373: Data structures and algorithms:</h2>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE373-Summer2023-Kornas/tree/main/deques">- Deques</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE373-Summer2023-Kornas/tree/main/maps">- Maps</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE373-Summer2023-Kornas/tree/main/heap">- Heap</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/CSE373-Summer2023-Kornas/tree/main/seamcarving">- Seamcarving (Dynamic Programming)</a><br>
-                            <h2>INFO 370: Core Methods in Data Science:</h2>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO370-Winter2023-PS01-BasicPython">- Basic Python and Basic Data Frames</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO370-Winter2023-PS02-DataExploration">- Data Exploration and Descriptive Statistis</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO370-Winter2023-PS03-CentralLimit">- Central Limit Theorem and Hypothesis Testing</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO370-Winter2023-PS04-LinearRegression">- Linear Regression</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO370-Winter2023-PS05-LogisticRegression">- Logistic Regression</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO370-Winter2023-PS06-Matrix">- Prediction and Confusion Matrix</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO370-Winter2023-PS07-FairAlgorithm">- Is the algorithm fair?</a><br>
-                            <h2>INFO 201: Foundational Skills for Data Science:</h2>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO201-Winter2022-A0">- Racial Disparities amongs the homeless in the U.S.</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO201-Winter2022-A1">- Trends in U.S. Protests</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO201-Winter2022-A2">- U.S. COVID-19 Trends</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO201-Winter2022-A3">- Incarceration rates amongst U.S. populations</a><br>
-                            <a class="course-project" target="_blank" href="https://github.com/zkornas/INFO201-Winter2022-A4">- Climate Change Trends</a><br>
                         </div>
                     </div>
                 </div>

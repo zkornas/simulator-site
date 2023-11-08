@@ -1,4 +1,4 @@
-var myPageIds = ['aboutme', 'myresearch', 'myprojects', 'contactme'];
+var myPageIds = ['about', 'download'];
 var isOpen = false;
 var isDark = false;
 

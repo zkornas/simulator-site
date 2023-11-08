@@ -7,7 +7,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #4b2e83;
+    background-color: rgb(12, 170, 65);
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
@@ -47,7 +47,7 @@ h2, h1, p, a {
 .openbtn {
     font-size: 1rem;
     cursor: pointer;
-    background-color: #4b2e83;
+    background-color: #09b43a;
     height: 60%;
     color: white;
     padding: 10px 15px;
@@ -55,7 +55,7 @@ h2, h1, p, a {
 }
 
 .openbtn:hover {
-    background-color: #4b2e83;
+    background-color: #09b43a;
 }
 
 #sidebar {
@@ -76,7 +76,7 @@ body.dark-theme p {
     transition: 0.3s;
 }
 body.dark-theme a {
-    color: #809fff;
+    color: #ffff;
     transition: 0.3s;
 }
 header.dark-theme {
