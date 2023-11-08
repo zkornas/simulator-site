@@ -1,0 +1,371 @@
+/*CSS for sidebar stuff*/
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #4b2e83;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    font-family: sans-serif;
+}
+
+h2, h1, p, a {
+    font-family: sans-serif;
+}
+
+.blur {
+    filter: blur(0px);
+    transition: 0.5s;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #4b2e83;
+    height: 60%;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.openbtn:hover {
+    background-color: #4b2e83;
+}
+
+#sidebar {
+    transition: margin-left 0.5s;
+    padding: 20px;
+}
+
+/*CSS for dark mode toggle*/
+
+body.dark-theme {
+    background: #121212;
+    transition: 0.3s;
+}
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme p {
+    color: #eee;
+    transition: 0.3s;
+}
+body.dark-theme a {
+    color: #809fff;
+    transition: 0.3s;
+}
+header.dark-theme {
+    background-color: #d9d8d8;
+    transition: 0.3s;
+}
+
+.switch {
+    position: fixed;
+    margin-bottom: 40px;
+    margin-right: 20px;
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    height: 34px;
+}
+  
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: #1d1235;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #1d1235;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+  .slider.round:before {
+    border-radius: 50%;
+}
+
+/*CSS for grey header at top of page*/
+
+.heading {
+    text-align: right;
+    padding: 10px;
+}
+
+h1.heading {
+    margin: 0;
+    margin-right: 5%;
+    padding: 0;
+}
+
+p.heading {
+    margin: 0;
+    margin-right: 5%;
+    padding: 0;
+    color: #494949;
+}
+
+.flex-container-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #d9d8d8;
+    border-radius: 10px;
+}
+
+.flex-child-header {
+    flex: 1;
+}
+
+.flex-child-header:first-child {
+    align-self: center;
+    padding-left: 10px;
+}
+
+.flex-child-header:last-child {
+    text-align: right;
+}
+
+/*CSS for about me section*/
+
+p.caption {
+    padding-top: 10px;
+    margin: 0;
+}
+
+a.caption {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+.aboutme {
+    padding-left: 100px;
+    content: "";
+    clear: both;
+    display: table;
+    font-size: 20px;
+}
+
+.aboutmeparagraph {
+    font-size: 28px;
+}
+
+.pagecontent {
+    padding-left: 100px;
+    display: none;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+}
+
+.flex-child:first-child{
+    margin-left: 20%;
+    margin-right: 20px;
+    flex-grow: 1;
+}
+
+.flex-child:last-child {
+    margin-right: 20%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 5%;
+    height: 250px;
+    
+}
+
+.zach {
+    max-height: 150%;
+    border-color:#d9d8d8;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+
+
+
+/*CSS for individual projects/research posts*/
+
+.flex-container-posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-child-posts {
+    flex: 1;
+}
+
+.flex-container-single-post {
+    display: flex;
+    align-items: center;
+}
+
+.flex-child-single-post {
+    flex: 1;
+}
+
+.flex-child-single-post:first-child {
+    margin-left: 20%;
+    padding-right: 75px;
+    flex-grow: 3;
+    font-size: 22px;
+}
+
+.flex-child-single-post:last-child {
+    margin-right: 20%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 5%;
+    height: 250px;
+}
+
+.post-img {
+    max-height: 150%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*CSS for reverse order individual projects/research posts*/
+
+.flex-child-single-post-reversed {
+    flex: 1;
+}
+
+.flex-child-single-post-reversed:first-child {
+    margin-left: 20%;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 5%;
+    height: 250px;
+}
+
+.flex-child-single-post-reversed:last-child {
+    margin-right: 20%;
+    padding-left: 75px;
+    flex-grow: 3;
+    font-size: 22px;
+}
+
+/*CSS for course projects*/
+.flex-container-course-projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-child-single-post-courses {
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-right: 75px;
+    flex-grow: 3;
+    font-size: 22px;
+    text-align: left;
+}
+
+a.course-project {
+    margin-left: 50px;
+    line-height: 1.5;
+}
+
+
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1650px) {
+    .flex-child-single-post:first-child,
+    .flex-child:first-child,
+    .flex-child-single-post-reversed:first-child,
+    .flex-child-single-post-courses {
+        margin-left: 0;
+    }
+
+    .flex-child-single-post:last-child,
+    .flex-child:last-child,
+    .flex-child-single-post-reversed:last-child,
+    .flex-child-single-post-courses {
+        margin-right: 0;
+        padding-right: 100px;
+    }
+}
