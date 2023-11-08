@@ -38,12 +38,14 @@ function showContent(id) {
 function isDarkMode() {
     if (!isDark) {
         document.body.classList.add("dark-theme");
-        document.getElementById("header").style.backgroundColor = "black";
+        document.getElementById("header").style.backgroundColor = "d9d8d8";
+        document.getElementById("asciiart").style.color = "Black";
         isDark = true;
     } else {
         document.body.classList.remove("dark-theme");
         document.getElementById("header").classList.remove("dark-theme");
-        document.getElementById("header").style.backgroundColor = "#d9d8d8";
+        document.getElementById("header").style.backgroundColor = "Black";
+        document.getElementById("asciiart").style.color = "#ffff";
         isDark = false;
     }
 }
