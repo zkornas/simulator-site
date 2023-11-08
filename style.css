@@ -185,7 +185,7 @@ p.heading {
 .flex-container-header {
     display: flex;
     justify-content: space-between;
-    background-color: #0000;
+    background-color: Black;
     border-radius: 10px;
 }
 
