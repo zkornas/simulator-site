@@ -1,6 +1,7 @@
 var myPageIds = ['about', 'download'];
 var isOpen = false;
 var isDark = false;
+var asciiart = document.getElementById('asciiart');
 
 function sideBar() {
     if (isOpen) {
@@ -48,4 +49,60 @@ function isDarkMode() {
         document.getElementById("asciiart").style.color = "#ffff";
         isDark = false;
     }
+}
+
+function scrambleText(element, duration) {
+    const originalText = element.innerText;
+    const characters = "/-_=+~#";
+
+    function getRandomCharacter() {
+        const nonSpaceCharacters = characters.replace(/\s/g, '');
+        return nonSpaceCharacters[Math.floor(Math.random() * nonSpaceCharacters.length)];
+    }
+
+    function updateText(progress) {
+        let newText = '';
+        for (let i = 0; i < originalText.length; i++) {
+            if (originalText[i] === '\n') {
+                newText += '\n';
+            } else if (originalText[i] === ' ') {
+                newText += ' ';
+            } else {
+                const revealAmount = Math.min(1, progress - i / originalText.length);
+                if (Math.random() < revealAmount) {
+                    newText += originalText[i];
+                } else {
+                    newText += getRandomCharacter();
+                }
+            }
+        }
+        element.innerText = newText;
+    }
+
+    let startTime = null;
+
+    function animate() {
+        if (!startTime) {
+            startTime = Date.now();
+        }
+    
+        const currentTime = Date.now();
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(1, elapsedTime / duration);
+    
+        if (elapsedTime < duration/2) {
+            const settleProgress = Math.min(1, (elapsedTime - duration) / 1000);
+            const finalProgress = progress * (1 - settleProgress);
+    
+            console.log('settle progress: ', settleProgress);
+            console.log('final progress: ')
+            updateText(finalProgress);
+            requestAnimationFrame(animate);
+        } else {
+            element.innerText = originalText;
+            console.log('done');
+        }
+    }
+    
+    animate();
 }
