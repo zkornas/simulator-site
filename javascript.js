@@ -65,14 +65,14 @@ function scrambleText(element, duration) {
         for (let i = 0; i < originalText.length; i++) {
             if (originalText[i] === '\n') {
                 newText += '\n';
-            } else if (originalText[i] === ' ') {
-                newText += ' ';
             } else {
-                const revealAmount = Math.min(1, progress - i / originalText.length);
+                const revealAmount = Math.min(1, (progress - i / originalText.length) / 2);
+                console.log('Reveal Amount: ', revealAmount);
                 if (Math.random() < revealAmount) {
                     newText += originalText[i];
                 } else {
                     newText += getRandomCharacter();
+                    console.log('Randomizing...');
                 }
             }
         }
@@ -88,14 +88,14 @@ function scrambleText(element, duration) {
     
         const currentTime = Date.now();
         const elapsedTime = currentTime - startTime;
-        const progress = Math.min(1, elapsedTime / duration);
+        const progress = elapsedTime / duration;
     
-        if (elapsedTime < duration/2) {
-            const settleProgress = Math.min(1, (elapsedTime - duration) / 1000);
+        if (elapsedTime < duration / 2) {
+            const settleProgress = Math.min(1, (elapsedTime - duration) / (duration / 10));
             const finalProgress = progress * (1 - settleProgress);
     
             console.log('settle progress: ', settleProgress);
-            console.log('final progress: ')
+            console.log('final progress: ', finalProgress);
             updateText(finalProgress);
             requestAnimationFrame(animate);
         } else {
