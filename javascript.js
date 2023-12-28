@@ -53,7 +53,7 @@ function isDarkMode() {
 
 function scrambleText(element, duration) {
     const originalText = element.innerText;
-    const characters = "/-_=+~#";
+    const characters = "01";
 
     function getRandomCharacter() {
         const nonSpaceCharacters = characters.replace(/\s/g, '');
