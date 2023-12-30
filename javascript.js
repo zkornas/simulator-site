@@ -97,7 +97,9 @@ function scrambleText(element, duration) {
             console.log('settle progress: ', settleProgress);
             console.log('final progress: ', finalProgress);
             updateText(finalProgress);
-            requestAnimationFrame(animate);
+            setTimeout(() => {
+                requestAnimationFrame(animate);
+            }, 100);
         } else {
             element.innerText = originalText;
             console.log('done');
