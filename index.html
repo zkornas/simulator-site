@@ -36,14 +36,27 @@ _ ___) | | | | | | | |_| | | (_| | | (_) | |
                     </p>
                 </div>
                 <div class="flex-child">
+                    <h2>How does SimulaTor work?</h2>
+                    <p>
+                        SimulaTor works by connecting to each potential relay on your local network and running a configuration script to install Tor, apply necessary settings, and share the relay's unique fingerprint with other relays on your network.
+
+                        This allows for the rapid deployment of a Tor network for research purposes, without needing to fiddle with certificates and Tor settings.
+                    </p>
+                </div>
+                <div class="flex-child">
                     <h2>How To Use SimulaTor</h2>
                     <p>
                         The deployment process assumes you have a main machine running that will not be used as a relay within your testing network. This will be referred to as your 'main machine', while the other computers on your local network you wish to include in your Tor network will be referred to as 'relays'.
                     </p>
+                    <h3>Dependencies: </h3>
+                    <blockquote>
+                        SimulaTor requires python installed on your main machine. You can install python using your systems package manager.
+                    </blockquote>
                     <h3>1. Clone the repository to your main machine:</h3>
                     <blockquote>git clone https://github.com/zkornas/SimulaTor.git</blockquote>
                     <h3>2. Ensure all relays are powered on</h3>
                     <p>
+                        <blockquote>
                         For ease of deployment, you can also optionally choose to share your SSH key between you main machine and your relays. The SimulaTor deployment process will share setup and configuration scripts between the relays as well as relay fingerprints, and you may need to enter your password multiple times if you choose not to share keys.
                         <br>
                         <br>
@@ -51,7 +64,36 @@ _ ___) | | | | | | | |_| | | (_| | | (_) | |
                         <br>
                         <br>
                         These suggestions entirely depend on your environment and use case, so choose the appropriate option for your set up.
+                        </blockquote>
                     </p>
+                    <h3>3. Gather the local IP addresses and user account names for your relays</h3>
+                    <p>
+                        <blockquote>
+                            The user account listed will be used by SimulaTor to SSH into your relays and run the configuration scripts.
+                        </blockquote>
+                    </p>
+                    <h3>4. Running SimulaTor</h3>
+                    <blockquote>
+                        <p>
+                            You can now run SimulaTor using python:
+                            <br>
+                            <p>
+                                sudo python /path/to/SimulaTor/simulator.py
+                            </p>
+                            <p>
+                                After reviewing the preprogram checklist, you will be asked to enter the relay IP addresses, user account names, and what you would like to call these relays. 
+                                <br>
+                                <br>
+                                You should enter these in a comma-separated list.
+                            </p>
+                        </p>
+                    </blockquote>
+                    <h3>5. Complete</h3>
+                    <blockquote>
+                        <p>
+                            You should now be left with a functional, private Tor network! You can use the circ_reader.py script on a client of your private network to view the circuits generated in your network.
+                        </p>
+                    </blockquote>
                 </div>
             </div>
         </div>
