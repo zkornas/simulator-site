@@ -6,36 +6,8 @@
         <link rel="icon" type="image/x-icon" href="img/onion.png">
     </head>
     <body>
-        <div id="mySidebar" class="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
-            <a href="#" onclick="closeSidebar(); showContent('about');">About</a>
-            <a href="#" onclick="closeSidebar(); showContent('download');">Download</a>
-            <!--<a href="#" onclick="closeSidebar(); showContent('howto');">How To</a>!-->
-            <label class="switch">
-                <input type="checkbox" onclick="isDarkMode();">
-                <span class="slider round"></span>
-            </label>
-        </div>
-        
-        <div id="sidebar">
-            <div id="header" class="flex-container-header">
-                <div class="flex-child-header">
-                    <button class="openbtn" onclick="sideBar()">&#9776;</button>
-                </div>
-                <div class="flex-child-header">
-                    <div id="heading" class="heading">
-                        <h1 class="heading">SimulaTor</h1>
-                        <p class="heading">
-                            Rapid configuration and deployment of a Tor network across physical devices
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div id="blur" class="blur">
-            <div id="about" class="aboutme">
-                <pre id="asciiart" class="asciiart">
+        <div>
+            <pre id="asciiart" class="asciiart">
   _____ _                 _    _______         
  / ____(_)               | |  |__   __|        
 | (___  _ _ __ ___  _   _| | __ _| | ___  _ __ 
@@ -43,57 +15,43 @@
 _ ___) | | | | | | | |_| | | (_| | | (_) | |   
 |_____/|_|_| |_| |_|\__,_|_|\__,_|_|\___/|_|   
 </pre>
-                <script>
-                    scrambleText(document.getElementById('asciiart'), 10000);
-                </script>
-                <div class="flex-container-posts">
-                    <div class="flex-child-posts">
-                        <div class="flex-container-single-post">
-                            <div class="flex-child-single-post">
-                                <h2>About</h2>
-                                <p>
-                                    Welcome to SimulaTor, a tool for the rapid deployment of testing Tor networks across physical hardware. Until now, researchers relied on virtualization tools that required significant computational power to research Tor. With SimulaTor, researchers can quickly and easily utilize cheap computers for research on the Tor network. <br>
-                                    <br>
-                                    While tools such as Chutney and Shadow allow researchers to create virtual Tor networks, there is no resource to help researchers create a simulated Tor network using physical nodes. While researching bandwidth inflation attacks, we have compiled information on creating a physical private Tor network and are excited to release the SimulaTor framework. Replicability is extremely important in research, and we hope that the SimulaTor framework will allow other researchers to be able to easily create simulated Tor networks to verify others' findings.
-                                </p>
-                            </div>
-                            <div class="flex-child-single-post">
-                                <img class="post-img" src="img/onion.png" alt="Tor onion icon">
-                            </div>
-                        </div>
-                        <div class="flex-container-single-post">
-                            <div class="flex-child-single-post-reversed">
-                                <img class="post-img" src="img/simulator.png" alt="SimulaTor cartoon">
-                            </div>
-                            <div class="flex-child-single-post-reversed">
-                                <h2>Why SimulaTor</h2>
-                                <p>
-                                    In order to fully mitigate the various threats that face Tor users, we must conduct research to understand how an adversary can attack Tor. While the best environment for understanding these threat actors may be the live Tor network, it can be extremely risky to run these experiments as they can potentially deanonymize Tor users. As a result, there is a strong need to simulate Tor networks for researchers to conduct their experiments. <br>
-                                    <br>
-                                    Currently, there is no clear documentation or tools for researchers to construct testing Tor networks on physical hardware, and researchers must rely on virtualization tools such as Shadow and Chutney. While these are amazing tools, there can be situations where it is preferred or necessary to conduct experiments over a physical network rather than a virtual environment. 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+            <script>
+                scrambleText(document.getElementById('asciiart'), 10000);
+            </script>
+            <div class="flex-container">
+                <div class="flex-child">
+                    <h2>About</h2>
+                    <p>
+                        Welcome to SimulaTor, a tool for the rapid deployment of testing Tor networks across physical hardware. Until now, researchers relied on virtualization tools that required significant computational power to research Tor. With SimulaTor, researchers can quickly and easily utilize cheap computers for research on the Tor network. <br>
+                        <br>
+                        While tools such as Chutney and Shadow allow researchers to create virtual Tor networks, there is no resource to help researchers create a simulated Tor network using physical nodes. While researching bandwidth inflation attacks, we have compiled information on creating a physical private Tor network and are excited to release the SimulaTor framework. Replicability is extremely important in research, and we hope that the SimulaTor framework will allow other researchers to be able to easily create simulated Tor networks to verify others' findings.
+                    </p>
                 </div>
-            </div>
-            <div id="download" class="pagecontent">
-                <div class="flex-container-posts">
-                    <div class="flex-child-posts">
-                        <div class="flex-container-single-post">
-                            <div class="flex-child-single-post">
-                                <h2>Github</h2>
-                                <p>
-                                    The SimulaTor framework is currently available on Github! <br>
-                                    <br>
-                                    <a href="https://github.com/zkornas/SimulaTor">Click here to check out the Github repository</a>
-                                </p>
-                            </div>
-                            <div class="flex-child-single-post">
-                                <img class="post-img" src="img/Github-icon.png" alt="Github icon">
-                            </div>
-                        </div>
-                    </div>
+                <div class="flex-child">
+                    <h2>Why SimulaTor</h2>
+                    <p>
+                        In order to fully mitigate the various threats that face Tor users, we must conduct research to understand how an adversary can attack Tor. While the best environment for understanding these threat actors may be the live Tor network, it can be extremely risky to run these experiments as they can potentially deanonymize Tor users. As a result, there is a strong need to simulate Tor networks for researchers to conduct their experiments. <br>
+                        <br>
+                        Currently, there is no clear documentation or tools for researchers to construct testing Tor networks on physical hardware, and researchers must rely on virtualization tools such as Shadow and Chutney. While these are amazing tools, there can be situations where it is preferred or necessary to conduct experiments over a physical network rather than a virtual environment. 
+                    </p>
+                </div>
+                <div class="flex-child">
+                    <h2>How To Use SimulaTor</h2>
+                    <p>
+                        The deployment process assumes you have a main machine running that will not be used as a relay within your testing network. This will be referred to as your 'main machine', while the other computers on your local network you wish to include in your Tor network will be referred to as 'relays'.
+                    </p>
+                    <h3>1. Clone the repository to your main machine:</h3>
+                    <blockquote>git clone https://github.com/zkornas/SimulaTor.git</blockquote>
+                    <h3>2. Ensure all relays are powered on</h3>
+                    <p>
+                        For ease of deployment, you can also optionally choose to share your SSH key between you main machine and your relays. The SimulaTor deployment process will share setup and configuration scripts between the relays as well as relay fingerprints, and you may need to enter your password multiple times if you choose not to share keys.
+                        <br>
+                        <br>
+                        Another suggestion would be to create a user on each relay and allow them to execute sudo commands without needing to enter a password. The scripts mentioned earlier will need to run at sudo level for proper configuration and you may need to enter your password multiple times.
+                        <br>
+                        <br>
+                        These suggestions entirely depend on your environment and use case, so choose the appropriate option for your set up.
+                    </p>
                 </div>
             </div>
         </div>
